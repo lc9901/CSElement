@@ -17,4 +17,8 @@ CHIP PC {
 
     PARTS:
     // Put your code here:
+    Mux16(a=in, b=false, sel=reset, out=tin1);
+    Mux16(a=)
+    
+
 }
