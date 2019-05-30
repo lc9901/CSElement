@@ -16,4 +16,15 @@ CHIP RAM512 {
 
     PARTS:
     // Put your code here:
+    // 8个64的ram
+    DMux8Way(in=load, sel=address[6..8], a=a1, b=a2, c=a3, d=a4, e=a5, f=a6, g=a7, h=a8);
+    RAM64(in=in, load=a1, address=address[0..5], out=o1);
+    RAM64(in=in, load=a2, address=address[0..5], out=o2);
+    RAM64(in=in, load=a3, address=address[0..5], out=o3);
+    RAM64(in=in, load=a4, address=address[0..5], out=o4);
+    RAM64(in=in, load=a5, address=address[0..5], out=o5);
+    RAM64(in=in, load=a6, address=address[0..5], out=o6);
+    RAM64(in=in, load=a7, address=address[0..5], out=o7);
+    RAM64(in=in, load=a8, address=address[0..5], out=o8);
+    Mux8Way16(a=o1, b=o2, c=o3, d=o4, e=o5, f=o6, g=o7, h=o8, sel=address[6..8], out=out);
 }
